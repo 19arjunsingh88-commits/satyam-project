@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Machine Learning Lab - Dual Language</title>
+
+<style>
+:root{
+    --bg1:#0b0f2a;
+    --bg2:#050514;
+    --card:rgba(255,255,255,0.06);
+    --text:#ffffff;
+    --accent:#00e5ff;
+    --glow:#ffe066;
+}
+
+body{
+    margin:0;
+    font-family:Arial;
+    background:linear-gradient(135deg,var(--bg1),var(--bg2));
+    color:var(--text);
+    text-align:center;
+    padding:15px;
+}
+
+h1{
+    color:var(--glow);
+    text-shadow:0 0 15px var(--glow);
+}
+
+.card{
+    max-width:1000px;
+    margin:15px auto;
+    padding:18px;
+    background:var(--card);
+    border-radius:15px;
+    text-align:left;
+}
+
+.btn{
+    padding:10px 14px;
+    margin:6px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:var(--accent);
+    font-weight:bold;
+}
+
+h2,h3{
+    color:#00e5ff;
+}
+
+ul,p{
+    line-height:1.6;
+}
+
+.note{
+    color:#ffe066;
+    font-style:italic;
+}
+</style>
+</head>
+
+<body>
+
+<h1 id="title">🤖 Machine Learning - Complete Theory Lab</h1>
+
+<div class="card" style="text-align:center;">
+    <button class="btn" onclick="toggleLang()">🌐 हिंदी / English</button>
+    <br><br>
+    <a class="btn" href="index.html">🏠 Home</a>
+</div>
+
+<!-- THEORY -->
+<div class="card">
+
+<h2 data-en="📘 Machine Learning Full Theory" data-hi="📘 मशीन लर्निंग पूरा सिद्धांत">
+📘 Machine Learning Full Theory
+</h2>
+
+<p data-en="Machine Learning is a branch of Artificial Intelligence where computers learn from data."
+   data-hi="मशीन लर्निंग आर्टिफिशियल इंटेलिजेंस की शाखा है जहाँ कंप्यूटर डेटा से सीखते हैं।">
+Machine Learning is a branch of Artificial Intelligence where computers learn from data.
+</p>
+
+<h3 data-en="🧠 How Machine Learning Works" data-hi="🧠 मशीन लर्निंग कैसे काम करता है">
+🧠 How Machine Learning Works
+</h3>
+
+<ul>
+<li data-en="Data Collection" data-hi="डेटा इकट्ठा करना">Data Collection</li>
+<li data-en="Data Cleaning" data-hi="डेटा साफ करना">Data Cleaning</li>
+<li data-en="Model Training" data-hi="मॉडल को ट्रेन करना">Model Training</li>
+<li data-en="Testing" data-hi="जांच करना">Testing</li>
+<li data-en="Prediction" data-hi="भविष्यवाणी">Prediction</li>
+</ul>
+
+<p class="note">Output = f(Data + Algorithm)</p>
+
+</div>
+
+<!-- TYPES -->
+<div class="card">
+
+<h2 data-en="⚡ Types of Machine Learning" data-hi="⚡ मशीन लर्निंग के प्रकार">
+⚡ Types of Machine Learning
+</h2>
+
+<h3 data-en="Supervised Learning" data-hi="सुपरवाइज़्ड लर्निंग">Supervised Learning</h3>
+<p data-en="Uses labeled data like spam detection."
+   data-hi="लेबल वाले डेटा का उपयोग जैसे स्पैम डिटेक्शन।">
+Uses labeled data like spam detection.
+</p>
+
+<h3 data-en="Unsupervised Learning" data-hi="अनसुपरवाइज़्ड लर्निंग">Unsupervised Learning</h3>
+<p data-en="Finds patterns in unlabeled data."
+   data-hi="बिना लेबल वाले डेटा में पैटर्न खोजता है।">
+Finds patterns in unlabeled data.
+</p>
+
+<h3 data-en="Reinforcement Learning" data-hi="रिइनफोर्समेंट लर्निंग">Reinforcement Learning</h3>
+<p data-en="Learns from reward and punishment."
+   data-hi="इनाम और सजा से सीखता है।">
+Learns from reward and punishment.
+</p>
+
+</div>
+
+<!-- APPLICATIONS -->
+<div class="card">
+
+<h2 data-en="🌍 Applications" data-hi="🌍 उपयोग">
+🌍 Applications
+</h2>
+
+<ul>
+<li>Face Recognition</li>
+<li>Self Driving Cars</li>
+<li>Chatbots</li>
+<li>Medical Diagnosis</li>
+<li>Recommendation Systems</li>
+</ul>
+
+</div>
+
+<!-- ADVANCED -->
+<div class="card">
+
+<h2 data-en="🔥 Advanced Concepts" data-hi="🔥 एडवांस कॉन्सेप्ट">
+🔥 Advanced Concepts
+</h2>
+
+<p data-en="Overfitting = model learns too much and fails on new data."
+   data-hi="ओवरफिटिंग = मॉडल ज्यादा सीख जाता है और नए डेटा पर फेल हो जाता है।">
+Overfitting = model learns too much and fails on new data.
+</p>
+
+<p data-en="Underfitting = model learns too little."
+   data-hi="अंडरफिटिंग = मॉडल कम सीखता है।">
+Underfitting = model learns too little.
+</p>
+
+</div>
+
+<script>
+
+let isHindi=false;
+
+/* FULL LANGUAGE SYSTEM */
+function toggleLang(){
+    isHindi=!isHindi;
+
+    document.querySelectorAll("[data-en]").forEach(el=>{
+        el.innerText = isHindi ? el.dataset.hi : el.dataset.en;
+    });
+
+    document.getElementById("title").innerText =
+        isHindi ? "🤖 मशीन लर्निंग लैब" : "🤖 Machine Learning Lab";
+}
+
+</script>
+
+</body>
+</html>

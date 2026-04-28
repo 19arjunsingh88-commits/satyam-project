@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ultra Science Lab</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#05061a;
+    color:white;
+    text-align:center;
+}
+
+/* TOP BAR */
+.topbar{
+    position:sticky;
+    top:0;
+    background:#111;
+    padding:10px;
+}
+
+/* BUTTON */
+button{
+    padding:10px;
+    margin:5px;
+    border:none;
+    border-radius:10px;
+    background:#00e5ff;
+    font-weight:bold;
+}
+
+/* CARD */
+.card{
+    background:rgba(255,255,255,0.06);
+    margin:15px;
+    padding:15px;
+    border-radius:15px;
+    text-align:left;
+}
+
+/* WIRE BOX */
+.wire{
+    background:#111;
+    padding:10px;
+    border-left:4px solid #00e5ff;
+    margin-top:10px;
+}
+
+/* FIX SCREEN */
+*{
+    box-sizing:border-box;
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+    <button onclick="toggleLang()">🌐 Hindi/English</button>
+</div>
+
+<h2 id="title">⚡ Ultra Electronics & Science Lab</h2>
+
+<!-- PROJECT 1 -->
+<div class="card">
+
+<h3 data-en="🔋 Voltage Booster (DC-DC Step Up)" data-hi="🔋 वोल्टेज बूस्टर">🔋 Voltage Booster</h3>
+
+<p data-en="Boost low voltage to higher voltage using BC547 transistor." 
+   data-hi="BC547 ट्रांजिस्टर से कम वोल्टेज को बढ़ाया जाता है।">
+   BC547 transistor used to increase voltage.
+</p>
+
+<div class="wire">
+<b>🔌 Wiring:</b><br><br>
+
+- Battery + ➜ Transformer Primary +<br>
+- Battery - ➜ BC547 Emitter<br><br>
+
+- BC547 Collector ➜ Transformer Primary -<br>
+- Transformer Secondary ➜ Output LED +<br>
+- LED - ➜ Battery -<br><br>
+
+⚠️ Base of BC547 ➜ 1K resistor ➜ Battery +
+</div>
+
+</div>
+
+<!-- PROJECT 2 -->
+<div class="card">
+
+<h3 data-en="💡 LED Switch Circuit" data-hi="💡 एलईडी स्विच सर्किट">💡 LED Switch Circuit</h3>
+
+<div class="wire">
+
+- Battery + ➜ Switch ➜ LED +<br>
+- LED - ➜ Resistor (220Ω) ➜ Battery -<br>
+
+</div>
+
+</div>
+
+<!-- PROJECT 3 -->
+<div class="card">
+
+<h3 data-en="🔊 Simple Buzzer Alarm" data-hi="🔊 बजर अलार्म">🔊 Buzzer Alarm</h3>
+
+<div class="wire">
+
+- Battery + ➜ Buzzer +<br>
+- Buzzer - ➜ BC547 Collector<br>
+- BC547 Emitter ➜ Battery -<br>
+- Switch ➜ Base (through 1K resistor)
+
+</div>
+
+</div>
+
+<!-- PROJECT 4 -->
+<div class="card">
+
+<h3 data-en="🌡️ Temperature Sensor (Basic)" data-hi="🌡️ तापमान सेंसर">🌡️ Temperature Sensor</h3>
+
+<div class="wire">
+
+- Battery + ➜ Thermistor +<br>
+- Thermistor ➜ BC547 Base<br>
+- BC547 Emitter ➜ Battery -<br>
+- Collector ➜ LED +<br>
+- LED - ➜ Battery -
+
+</div>
+
+</div>
+
+<!-- SCIENCE -->
+<div class="card">
+
+<h3 data-en="🧪 Vinegar + Baking Soda Reaction" data-hi="🧪 सिरका और बेकिंग सोडा प्रयोग">🧪 Chemical Experiment</h3>
+
+<p>
+- Vinegar + Baking Soda<br>
+- Gas released = CO₂<br>
+- Balloon inflate experiment
+</p>
+
+</div>
+
+<script>
+
+let isHindi=false;
+
+function toggleLang(){
+    isHindi=!isHindi;
+
+    document.querySelectorAll("[data-en]").forEach(e=>{
+        e.innerText = isHindi ? e.dataset.hi : e.dataset.en;
+    });
+
+    document.getElementById("title").innerText =
+    isHindi ? "⚡ अल्ट्रा इलेक्ट्रॉनिक्स लैब" : "⚡ Ultra Electronics & Science Lab";
+}
+
+</script>
+
+</body>
+</html>

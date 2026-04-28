@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Venus | Planet Info</title>
+
+<style>
+    body{
+        margin:0;
+        font-family: Arial, sans-serif;
+
+        /* HOT GOLD + SPACE DARK GRADIENT */
+        background: radial-gradient(circle at top, #3a1d00, #0b0c12 70%);
+        color:white;
+        text-align:center;
+        padding:25px;
+    }
+
+    /* subtle star field */
+    body::before{
+        content:"";
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:
+        radial-gradient(2px 2px at 10% 20%, rgba(255,255,255,0.9), transparent),
+        radial-gradient(1px 1px at 70% 40%, rgba(255,255,255,0.7), transparent),
+        radial-gradient(2px 2px at 40% 80%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 85% 60%, rgba(255,255,255,0.8), transparent);
+        opacity:0.2;
+        z-index:-1;
+    }
+
+    .box{
+        max-width:600px;
+        margin:auto;
+
+        background: rgba(255,255,255,0.07);
+        border:1px solid rgba(255,255,255,0.12);
+        border-radius:30px;
+        padding:35px;
+
+        box-shadow:
+        0 0 40px rgba(255,170,0,0.18),
+        inset 0 0 25px rgba(255,255,255,0.05);
+
+        backdrop-filter: blur(12px);
+    }
+
+    img{
+        width:240px;
+        height:240px;
+        border-radius:50%;
+        margin-bottom:15px;
+
+        box-shadow:
+        0 0 40px rgba(255,200,0,0.5),
+        0 0 80px rgba(255,120,0,0.2);
+
+        transition:0.4s ease;
+    }
+
+    img:hover{
+        transform: scale(1.07);
+    }
+
+    h1{
+        font-size:40px;
+        margin:10px 0 5px;
+        color:#ffd36a;
+        text-shadow:0 0 18px rgba(255,180,0,0.4);
+    }
+
+    h2{
+        font-size:20px;
+        color:#ffb84d;
+        margin-bottom:20px;
+    }
+
+    .section-title{
+        margin-top:25px;
+        font-size:18px;
+        color:white;
+        text-shadow:0 0 10px rgba(255,255,255,0.2);
+    }
+
+    .desc{
+        text-align:left;
+        font-size:15px;
+        line-height:1.8;
+        color:#ffe9c7;
+    }
+
+    .highlight{
+        color:#ffd36a;
+        font-weight:bold;
+    }
+
+    .fact-box{
+        margin-top:25px;
+        padding:22px;
+        background: rgba(0,0,0,0.25);
+        border:1px solid rgba(255,255,255,0.12);
+        border-radius:20px;
+        text-align:left;
+    }
+
+    .fact-box h3{
+        text-align:center;
+        color:#ffd36a;
+        margin-bottom:15px;
+        text-shadow:0 0 12px rgba(255,180,0,0.4);
+    }
+
+    .fact-box p{
+        font-size:14px;
+        margin:8px 0;
+        line-height:1.6;
+        color:#ffe9c7;
+    }
+
+    .btn{
+        display:inline-block;
+        margin-top:22px;
+        padding:12px 18px;
+        text-decoration:none;
+
+        background:rgba(255,255,255,0.08);
+        color:white;
+        border-radius:14px;
+        border:1px solid rgba(255,255,255,0.2);
+
+        transition:0.3s ease;
+    }
+
+    .btn:hover{
+        background:#ffd36a;
+        color:black;
+        transform: scale(1.06);
+        box-shadow:0 0 20px rgba(255,180,0,0.5);
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <img src="venus.jpg" alt="Venus">
+
+    <h1>🌕 Venus</h1>
+    <h2>The Hottest Planet in the Solar System</h2>
+
+    <div class="section-title">📖 About Venus</div>
+
+    <div class="desc">
+
+        Venus is the second planet from the Sun and is often called Earth’s twin because of its similar size and structure.
+
+        <br><br>
+
+        But despite similarities, Venus is extremely different — it is the hottest planet in the Solar System due to its thick atmosphere that traps heat like a greenhouse.
+
+        <br><br>
+
+        Its atmosphere is mostly carbon dioxide with thick clouds of sulfuric acid, making it a very hostile environment.
+
+        <br><br>
+
+        Venus rotates very slowly, and one day on Venus is longer than its entire year.
+
+    </div>
+
+    <div class="section-title">🌌 10 Interesting Facts about Venus</div>
+
+    <div class="fact-box">
+
+        <h3>Venus Facts</h3>
+
+        <p>1. Venus is the second planet from the Sun.</p>
+        <p>2. It is the hottest planet in the Solar System.</p>
+        <p>3. Venus is similar in size to Earth.</p>
+        <p>4. It has a thick carbon dioxide atmosphere.</p>
+        <p>5. Clouds are made of sulfuric acid.</p>
+        <p>6. Surface temperature is about 465°C.</p>
+        <p>7. Venus rotates very slowly.</p>
+        <p>8. One day is longer than its year.</p>
+        <p>9. It is known as Morning Star / Evening Star.</p>
+        <p>10. Venus has no moons or rings.</p>
+
+    </div>
+
+    <a class="btn" href="index.html">⬅ Back to Solar System</a>
+
+</div>
+
+</body>
+</html> 

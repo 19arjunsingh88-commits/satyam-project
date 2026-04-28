@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Space & Science Explorer</title>
+
+<meta name="description" content="Explore planets, science, AI and experiments in one place.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Satyam">
+
+<link rel="icon" href="icon.png">
+
+<style>
+:root{
+    --bg1:#05061a;
+    --bg2:#01010a;
+    --card:rgba(255,255,255,0.08);
+    --text:white;
+    --accent:#00e5ff;
+    --glow:#ffe066;
+}
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:radial-gradient(circle at top,var(--bg1),var(--bg2));
+    color:var(--text);
+    text-align:center;
+}
+
+/* 🌌 STAR ANIMATION */
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:url("https://www.transparenttextures.com/patterns/stardust.png");
+    opacity:0.25;
+    z-index:-1;
+    animation:moveStars 80s linear infinite;
+}
+
+@keyframes moveStars{
+    from{transform:translateY(0);}
+    to{transform:translateY(-1000px);}
+}
+
+h1{
+    margin-top:20px;
+    color:var(--glow);
+}
+
+/* SEARCH */
+.search-box input{
+    width:85%;
+    padding:12px;
+    border-radius:12px;
+    border:none;
+    font-size:16px;
+}
+
+/* GRID */
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:15px;
+    display:grid;
+    gap:20px;
+}
+
+/* CARD */
+.box{
+    background:var(--card);
+    border-radius:20px;
+    padding:20px;
+    backdrop-filter:blur(12px);
+    transition:0.3s;
+}
+
+.box:hover{
+    transform:scale(1.03);
+}
+
+.title{
+    color:var(--accent);
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+/* LINKS */
+a{
+    display:block;
+    padding:12px;
+    margin:8px 0;
+    text-decoration:none;
+    color:var(--text);
+    border-radius:10px;
+    background:rgba(255,255,255,0.05);
+}
+
+a:hover{
+    background:var(--accent);
+    color:black;
+}
+
+/* BUTTON */
+button{
+    margin:8px;
+    padding:10px 15px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:var(--accent);
+    font-weight:bold;
+}
+
+footer{
+    margin:20px;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<h1 id="title">🌌 Space & Science Explorer</h1>
+
+<button onclick="toggleLanguage()">🌐 हिंदी / English</button>
+<button onclick="openNew()">🆕 New</button>
+
+<div class="search-box">
+<input type="text" id="search" placeholder="Search anything..." onkeyup="searchItems()">
+</div>
+
+<div class="container">
+
+<div class="box">
+<div class="title" id="pTitle">🪐 Planets</div>
+<a href="sun.html" data-en="☀️ Sun" data-hi="☀️ सूर्य">☀️ Sun</a>
+<a href="mercury.html" data-en="☿ Mercury" data-hi="☿ बुध">☿ Mercury</a>
+<a href="venus.html" data-en="🌕 Venus" data-hi="🌕 शुक्र">🌕 Venus</a>
+<a href="earth.html" data-en="🌍 Earth" data-hi="🌍 पृथ्वी">🌍 Earth</a>
+<a href="mars.html" data-en="🔴 Mars" data-hi="🔴 मंगल">🔴 Mars</a>
+<a href="jupiter.html" data-en="🟠 Jupiter" data-hi="🟠 बृहस्पति">🟠 Jupiter</a>
+<a href="saturn.html" data-en="💫 Saturn" data-hi="💫 शनि">💫 Saturn</a>
+<a href="uranus.html" data-en="🔵 Uranus" data-hi="🔵 अरुण">🔵 Uranus</a>
+<a href="neptune.html" data-en="🌊 Neptune" data-hi="🌊 वरुण">🌊 Neptune</a>
+</div>
+
+<div class="box">
+<div class="title" id="cTitle">🧪 Chemistry Lab</div>
+<a href="acids.html">⚗️ Acids</a>
+<a href="bases.html">🧼 Bases</a>
+<a href="salts.html">🧂 Salts</a>
+</div>
+
+<div class="box">
+<div class="title">⚡ Physics Lab</div>
+<a href="motion.html">🚗 Motion</a>
+<a href="laws.html">📘 Newton Laws</a>
+<a href="electricity.html">🔌 Electricity</a>
+</div>
+
+<div class="box">
+<div class="title">🤖 AI World</div>
+<a href="ai_intro.html">🧠 AI Intro</a>
+<a href="machine_learning.html">📊 Machine Learning</a>
+</div>
+
+<div class="box">
+<div class="title">🧪 Experiments</div>
+<a href="home_experiments.html">🏠 Home Experiments</a>
+<a href="physics_experiments.html">⚡ Physics Experiments</a>
+<a href="chemistry_experiments.html">⚗️ Chemistry Experiments</a>
+</div>
+
+</div>
+
+<footer>🚀 Space Explorer by Satyam</footer>
+
+<script>
+let isHindi=false;
+
+function toggleLanguage(){
+    isHindi=!isHindi;
+
+    document.querySelectorAll('a').forEach(a=>{
+        if(a.dataset.en){
+            a.innerText=isHindi?a.dataset.hi:a.dataset.en;
+        }
+    });
+
+    document.getElementById('title').innerText=isHindi
+    ?"🌌 अंतरिक्ष और विज्ञान एक्सप्लोरर"
+    :"🌌 Space & Science Explorer";
+
+    document.getElementById('pTitle').innerText=isHindi?"🪐 ग्रह":"🪐 Planets";
+    document.getElementById('cTitle').innerText=isHindi?"🧪 रसायन":"🧪 Chemistry Lab";
+}
+
+function searchItems(){
+    let input=document.getElementById("search").value.toLowerCase();
+
+    document.querySelectorAll("a").forEach(link=>{
+        link.style.display = link.innerText.toLowerCase().includes(input)
+        ? "block"
+        : "none";
+    });
+}
+
+/* ✅ FIXED */
+function openNew(){
+    window.location.href = "new.html";
+}
+</script>
+
+</body>
+</html>

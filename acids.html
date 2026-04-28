@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Acids - Chemistry Lab</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background: radial-gradient(circle at top, #070b1f, #000);
+    color:white;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+/* 🌌 animated background */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 10% 20%, rgba(0,255,255,0.15), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255,0,150,0.10), transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05), transparent 60%);
+    animation: move 10s infinite alternate;
+    z-index:-1;
+}
+
+@keyframes move{
+    0%{transform:scale(1) translateY(0);}
+    100%{transform:scale(1.1) translateY(-20px);}
+}
+
+/* HEADER */
+h1{
+    margin-top:25px;
+    color:#00e5ff;
+    text-shadow:0 0 15px #00e5ff;
+}
+
+.sub{
+    opacity:0.7;
+    font-size:14px;
+}
+
+/* CONTAINER */
+.container{
+    max-width:850px;
+    margin:auto;
+    padding:15px;
+}
+
+/* CARD */
+.card{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:18px;
+    padding:18px;
+    margin:14px 0;
+    text-align:left;
+    backdrop-filter:blur(12px);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.02);
+    box-shadow:0 0 25px rgba(0,255,255,0.2);
+}
+
+.title{
+    color:#ffd700;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+/* ITEM */
+.item{
+    font-size:14px;
+    margin:6px 0;
+    padding:6px;
+    border-radius:8px;
+    transition:0.2s;
+}
+
+.item:hover{
+    background:rgba(0,255,255,0.08);
+}
+
+.formula{
+    color:#00e5ff;
+    font-weight:bold;
+}
+
+/* BACK BUTTON */
+a{
+    display:inline-block;
+    margin-top:25px;
+    padding:10px 18px;
+    text-decoration:none;
+    color:black;
+    background:#00e5ff;
+    border-radius:12px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+a:hover{
+    background:#00bcd4;
+    transform:scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<h1>⚗️ Acids Library</h1>
+<p class="sub">Advanced collection of acids with formulas</p>
+
+<div class="container">
+
+<!-- Mineral Acids -->
+<div class="card">
+<div class="title">🧪 Strong Mineral Acids</div>
+
+<div class="item">Hydrochloric Acid → <span class="formula">HCl</span></div>
+<div class="item">Sulfuric Acid → <span class="formula">H₂SO₄</span></div>
+<div class="item">Nitric Acid → <span class="formula">HNO₃</span></div>
+<div class="item">Phosphoric Acid → <span class="formula">H₃PO₄</span></div>
+<div class="item">Hydrobromic Acid → <span class="formula">HBr</span></div>
+<div class="item">Hydroiodic Acid → <span class="formula">HI</span></div>
+
+</div>
+
+<!-- Organic acids -->
+<div class="card">
+<div class="title">🌿 Organic Acids</div>
+
+<div class="item">Acetic Acid → <span class="formula">CH₃COOH</span></div>
+<div class="item">Formic Acid → <span class="formula">HCOOH</span></div>
+<div class="item">Citric Acid → <span class="formula">C₆H₈O₇</span></div>
+<div class="item">Lactic Acid → <span class="formula">C₃H₆O₃</span></div>
+<div class="item">Oxalic Acid → <span class="formula">C₂H₂O₄</span></div>
+<div class="item">Tartaric Acid → <span class="formula">C₄H₆O₆</span></div>
+<div class="item">Benzoic Acid → <span class="formula">C₇H₆O₂</span></div>
+
+</div>
+
+<!-- Weak acids -->
+<div class="card">
+<div class="title">🌊 Weak & Special Acids</div>
+
+<div class="item">Carbonic Acid → <span class="formula">H₂CO₃</span></div>
+<div class="item">Boric Acid → <span class="formula">H₃BO₃</span></div>
+<div class="item">Hydrofluoric Acid → <span class="formula">HF</span></div>
+<div class="item">Chloric Acid → <span class="formula">HClO₃</span></div>
+<div class="item">Perchloric Acid → <span class="formula">HClO₄</span></div>
+<div class="item">Sulfurous Acid → <span class="formula">H₂SO₃</span></div>
+
+</div>
+
+<!-- extra facts -->
+<div class="card">
+<div class="title">💡 Quick Facts</div>
+
+<div class="item">• Acids taste sour and turn blue litmus red</div>
+<div class="item">• Strong acids fully ionize in water</div>
+<div class="item">• Vinegar contains Acetic Acid</div>
+<div class="item">• Battery acid is Sulfuric Acid</div>
+
+</div>
+
+</div>
+
+<a href="index.html">⬅ Back to Chemistry Lab</a>
+
+</body>
+</html>

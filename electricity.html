@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electricity Ultra Pro Lab</title>
+
+<style>
+:root{
+    --bg1:#020024;
+    --bg2:#090979;
+    --card:rgba(255,255,255,0.08);
+    --text:#fff;
+    --accent:#00e5ff;
+    --glow:#ffe066;
+}
+
+body{
+    margin:0;
+    font-family:Arial;
+    background:linear-gradient(135deg,var(--bg1),var(--bg2));
+    color:var(--text);
+    text-align:center;
+    padding:12px;
+}
+
+h1{
+    color:var(--glow);
+    text-shadow:0 0 10px var(--glow);
+}
+
+.card{
+    max-width:950px;
+    margin:15px auto;
+    padding:15px;
+    background:var(--card);
+    border-radius:15px;
+    text-align:left;
+}
+
+.center{text-align:center;}
+
+.btn{
+    padding:10px 14px;
+    margin:6px;
+    border:none;
+    border-radius:10px;
+    background:var(--accent);
+    font-weight:bold;
+    cursor:pointer;
+    color:black;
+}
+
+input{
+    padding:10px;
+    margin:6px;
+    border-radius:10px;
+    border:none;
+    width:140px;
+    text-align:center;
+    font-weight:bold;
+}
+
+input:disabled{
+    background:#555;
+    color:white;
+}
+
+canvas{
+    width:100%;
+    background:#111;
+    border-radius:10px;
+}
+
+.switch{
+    padding:12px 18px;
+    background:red;
+    border:none;
+    border-radius:10px;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<h1>⚡ Electricity Ultra Pro Lab</h1>
+
+<div class="card center">
+    <button class="btn" onclick="toggleLang()">🌐 हिंदी / English</button>
+    <br><br>
+    <a class="btn" href="index.html">🏠 Home</a>
+</div>
+
+<!-- THEORY -->
+<div class="card">
+<h2>📘 Electricity Theory</h2>
+<p>
+Electricity is flow of electric charge through a conductor.
+</p>
+
+<ul>
+<li>Voltage (V)</li>
+<li>Current (I)</li>
+<li>Resistance (R)</li>
+<li>Ohm’s Law → V = I × R</li>
+</ul>
+</div>
+
+<!-- CIRCUIT -->
+<div class="card center">
+<h2>🔌 Live Circuit</h2>
+
+<canvas id="circuit" width="500" height="250"></canvas>
+<br>
+
+<button class="switch" onclick="toggleSwitch()">SWITCH</button>
+
+<p id="status">LED OFF</p>
+</div>
+
+<!-- CALCULATOR -->
+<div class="card">
+<h2>📊 Ohm’s Law Smart Calculator</h2>
+
+<input id="v" placeholder="Voltage (V)" oninput="autoLock()">
+<input id="i" placeholder="Current (I)" oninput="autoLock()">
+<input id="r" placeholder="Resistance (R)" oninput="autoLock()">
+
+<br>
+
+<button class="btn" onclick="calculate()">Calculate</button>
+
+<p id="result"></p>
+</div>
+
+<script>
+
+let power=false;
+
+/* SWITCH CIRCUIT */
+let c=document.getElementById("circuit").getContext("2d");
+
+function draw(){
+
+c.clearRect(0,0,500,250);
+
+// battery
+c.fillStyle="yellow";
+c.fillRect(50,100,60,30);
+c.fillStyle="black";
+c.fillText("BATTERY",55,120);
+
+// wire
+c.strokeStyle="white";
+c.beginPath();
+c.moveTo(110,115);
+c.lineTo(200,115);
+c.stroke();
+
+// switch
+c.fillStyle=power?"lime":"red";
+c.fillRect(200,105,60,20);
+c.fillStyle="white";
+c.fillText("SWITCH",205,120);
+
+// wire
+c.beginPath();
+c.moveTo(260,115);
+c.lineTo(340,115);
+c.stroke();
+
+// LED
+c.fillStyle=power?"lime":"gray";
+c.beginPath();
+c.arc(380,115,15,0,Math.PI*2);
+c.fill();
+
+c.fillStyle="white";
+c.fillText("LED",365,150);
+}
+
+draw();
+
+function toggleSwitch(){
+    power=!power;
+    draw();
+    document.getElementById("status").innerText =
+    power ? "LED ON 💡" : "LED OFF";
+}
+
+/* AUTO LOCK LOGIC */
+function autoLock(){
+
+let v=document.getElementById("v");
+let i=document.getElementById("i");
+let r=document.getElementById("r");
+
+let filled = [
+v.value !== "",
+i.value !== "",
+r.value !== ""
+];
+
+// reset
+v.disabled=false;
+i.disabled=false;
+r.disabled=false;
+
+// lock third input
+if(filled[0] && filled[1]) r.disabled=true;
+if(filled[0] && filled[2]) i.disabled=true;
+if(filled[1] && filled[2]) v.disabled=true;
+
+}
+
+/* CALCULATION */
+function calculate(){
+
+let V=Number(document.getElementById("v").value);
+let I=Number(document.getElementById("i").value);
+let R=Number(document.getElementById("r").value);
+
+let result="";
+
+// missing value auto solve
+if(!V && I && R){
+    V=I*R;
+    result="V = "+V+" V";
+}
+else if(!I && V && R){
+    I=V/R;
+    result="I = "+I+" A";
+}
+else if(!R && V && I){
+    R=V/I;
+    result="R = "+R+" Ω";
+}
+else{
+    result="⚠️ सिर्फ 2 values डालो";
+}
+
+document.getElementById("result").innerText=result;
+}
+
+</script>
+
+</body>
+</html>

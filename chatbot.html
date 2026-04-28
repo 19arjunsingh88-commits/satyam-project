@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Chatbot</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#0b0f1a;
+    color:white;
+    text-align:center;
+}
+
+h1{
+    color:#ffe066;
+}
+
+.chat-box{
+    max-width:600px;
+    margin:auto;
+    background:rgba(255,255,255,0.05);
+    padding:15px;
+    border-radius:15px;
+    height:70vh;
+    overflow-y:auto;
+}
+
+.msg{
+    padding:10px;
+    margin:8px;
+    border-radius:10px;
+    max-width:80%;
+}
+
+.user{
+    background:#00e5ff;
+    color:black;
+    margin-left:auto;
+    text-align:right;
+}
+
+.bot{
+    background:#333;
+    margin-right:auto;
+    text-align:left;
+}
+
+.input-box{
+    margin-top:10px;
+}
+
+input{
+    width:70%;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+}
+
+button{
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    background:#00e5ff;
+    font-weight:bold;
+    cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🤖 AI Chatbot</h1>
+
+<div class="chat-box" id="chat"></div>
+
+<div class="input-box">
+    <input id="msg" placeholder="Type message...">
+    <button onclick="send()">Send</button>
+</div>
+
+<script>
+
+let isHindi=false;
+
+function addMsg(text, type){
+    let div = document.createElement("div");
+    div.className = "msg " + type;
+    div.innerText = text;
+    document.getElementById("chat").appendChild(div);
+    document.getElementById("chat").scrollTop = 999999;
+}
+
+function botReply(input){
+
+    input = input.toLowerCase();
+
+    let res = "";
+
+    if(input.includes("hello") || input.includes("hi")){
+        res = isHindi ? "नमस्ते 👋 मैं आपका AI हूँ" : "Hello 👋 I am your AI bot";
+    }
+    else if(input.includes("ai")){
+        res = isHindi ? "AI का मतलब Artificial Intelligence है" : "AI means Artificial Intelligence";
+    }
+    else if(input.includes("physics")){
+        res = isHindi ? "Physics प्रकृति के नियमों का अध्ययन है" : "Physics is the study of nature laws";
+    }
+    else if(input.includes("chemistry")){
+        res = isHindi ? "Chemistry पदार्थों का अध्ययन है" : "Chemistry is the study of matter";
+    }
+    else if(input.includes("planet")){
+        res = isHindi ? "सौरमंडल में 8 ग्रह हैं" : "There are 8 planets in solar system";
+    }
+    else{
+        res = isHindi ? "मुझे समझ नहीं आया 😅" : "I didn't understand that 😅";
+    }
+
+    setTimeout(()=> addMsg(res,"bot"),500);
+}
+
+function send(){
+    let input = document.getElementById("msg").value;
+    if(input.trim()=="") return;
+
+    addMsg(input,"user");
+    document.getElementById("msg").value="";
+
+    botReply(input);
+}
+
+</script>
+
+</body>
+</html>

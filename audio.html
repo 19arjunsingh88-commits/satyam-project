@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pro Music Player</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+    text-align:center;
+}
+
+h1{
+    margin-top:20px;
+    text-shadow:0 0 10px #00e5ff;
+}
+
+.player-box{
+    margin:20px auto;
+    width:90%;
+    max-width:700px;
+    padding:15px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    box-shadow:0 0 25px rgba(0,229,255,0.3);
+}
+
+iframe{
+    width:100%;
+    height:230px;
+    border-radius:15px;
+}
+
+.search{
+    width:85%;
+    padding:12px;
+    border-radius:12px;
+    border:none;
+    margin:10px;
+    font-size:16px;
+}
+
+.playlist{
+    max-width:700px;
+    margin:auto;
+}
+
+.song{
+    background:rgba(255,255,255,0.1);
+    margin:10px;
+    padding:15px;
+    border-radius:15px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.song:hover{
+    transform:scale(1.05);
+    background:#00e5ff;
+    color:black;
+}
+
+.active{
+    background:#00e5ff;
+    color:black;
+    box-shadow:0 0 15px #00e5ff;
+}
+
+.song-title{
+    font-weight:bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🎧 Pro Music Player</h1>
+
+<!-- PLAYER -->
+<div class="player-box">
+<iframe id="player"
+src="https://www.youtube.com/embed/H4rujkdevsw?autoplay=1"
+allow="autoplay"
+allowfullscreen></iframe>
+</div>
+
+<!-- SEARCH -->
+<input type="text" class="search" placeholder="Search song..." onkeyup="searchSongs()">
+
+<!-- PLAYLIST -->
+<div class="playlist">
+
+<div class="song active" onclick="playSong(this,'H4rujkdevsw')">
+<div class="song-title">🇮🇳 कहानी नहीं, पहचान है</div>
+</div>
+
+<div class="song" onclick="playSong(this,'BSNRxs6x5u4')">
+<div class="song-title">🇮🇳 भारत की गौरवशाली गाथा</div>
+</div>
+
+<div class="song" onclick="playSong(this,'0j20K9XLJ2Q')">
+<div class="song-title">🧪 Periodic Table Rap</div>
+</div>
+
+<!-- ✅ NEW SHORTS SONG -->
+<div class="song" onclick="playSong(this,'_c8FvhySgao')">
+<div class="song-title">⚡ Periodic Table Shorts</div>
+</div>
+
+</div>
+
+<script>
+function playSong(el,id){
+    document.getElementById("player").src =
+    "https://www.youtube.com/embed/" + id + "?autoplay=1";
+
+    document.querySelectorAll(".song").forEach(s=>s.classList.remove("active"));
+    el.classList.add("active");
+}
+
+function searchSongs(){
+    let input=document.querySelector(".search").value.toLowerCase();
+
+    document.querySelectorAll(".song").forEach(song=>{
+        song.style.display =
+        song.innerText.toLowerCase().includes(input) ? "block" : "none";
+    });
+}
+</script>
+
+</body>
+</html>

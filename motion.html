@@ -1,0 +1,260 @@
+<!DOCTYPE html><html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motion Lab - Ultra Advanced Physics</title><style>
+:root{
+    --bg1:#000428;
+    --bg2:#004e92;
+    --card:rgba(255,255,255,0.08);
+    --text:white;
+    --accent:#00e5ff;
+    --glow:#00e5ff;
+}
+
+body{
+    margin:0;
+    font-family:Arial;
+    background:linear-gradient(to right,var(--bg1),var(--bg2));
+    color:var(--text);
+    text-align:center;
+    padding:20px;
+}
+
+h1{
+    color:var(--glow);
+    text-shadow:0 0 10px var(--glow);
+}
+
+.card{
+    background:var(--card);
+    padding:20px;
+    margin:15px auto;
+    max-width:950px;
+    border-radius:15px;
+}
+
+input{
+    padding:10px;
+    margin:8px;
+    border-radius:10px;
+    border:none;
+    width:160px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.btn{
+    display:inline-block;
+    margin:8px;
+    padding:10px 15px;
+    background:var(--accent);
+    color:black;
+    border:none;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.result{margin-top:15px;color:#ffe066;}
+
+.track{
+    width:90%;height:40px;background:#222;margin:20px auto;border-radius:20px;position:relative;
+}
+
+.car{
+    width:40px;height:40px;background:red;border-radius:10px;position:absolute;left:0;
+}
+
+.gameArea{
+    width:90%;height:240px;background:#111;margin:auto;position:relative;overflow:hidden;border-radius:10px;
+}
+
+.player{
+    width:40px;height:40px;background:yellow;position:absolute;bottom:0;left:20px;
+}
+
+.obstacle{
+    width:30px;height:40px;background:red;position:absolute;bottom:0;right:0;
+}
+
+.score{
+    font-size:18px;margin:10px;color:#ffe066;
+}
+
+.small{font-size:13px;opacity:0.8;}
+</style></head><body><h1 id="title">🚗 Motion Lab ULTRA</h1><div class="card">
+    <a class="btn" id="homeBtn" href="index.html">🏠 Back to Home</a>
+    <button class="btn" onclick="toggleLang()">🌐 हिंदी / English</button>
+</div><!-- THEORY SECTION --><div class="card">
+    <h2 id="t1">📌 Motion</h2>
+    <p id="p1">जब कोई वस्तु समय के साथ अपनी स्थिति बदलती है उसे Motion कहते हैं।</p>
+</div><div class="card">
+    <h2 id="t2">⚡ Types of Motion</h2>
+    <p id="p2">Rectilinear, Circular, Oscillatory, Random motion होते हैं।</p>
+</div><div class="card">
+    <h2 id="t3">📊 Equations of Motion</h2>
+    <p id="p3">v = u + at | s = ut + 1/2 at² | v² = u² + 2as</p>
+</div><div class="card">
+    <h2 id="t4">📈 Motion Graphs</h2>
+    <p id="p4">Distance-Time graph और Velocity-Time graph motion को समझाते हैं।</p>
+</div><!-- CALCULATOR --><div class="card">
+    <h2>📊 Motion Calculator</h2><p>Distance</p>
+<input type="number" id="distance" oninput="autoLock()">
+
+<p>Time</p>
+<input type="number" id="time" oninput="autoLock()">
+
+<p>Speed</p>
+<input type="number" id="speed" oninput="autoLock()">
+
+<br>
+<button class="btn" onclick="calculate()">Calculate</button>
+<button class="btn" onclick="resetCalc()">Reset</button>
+<div class="result" id="result"></div>
+
+</div><!-- SIMULATOR --><div class="card">
+    <h2>🏎️ Motion Simulator</h2>
+    <button class="btn" onclick="startCar()">Start</button>
+    <button class="btn" onclick="resetCar()">Reset</button>
+    <div class="track"><div class="car" id="car"></div></div>
+</div><!-- GAME MODE ADVANCED --><div class="card">
+    <h2>🎮 Physics Game Mode ULTRA</h2>
+    <div class="score" id="score">Score: 0</div>
+    <button class="btn" onclick="jump()">Jump</button>
+    <button class="btn" onclick="startGame()">Start Game</button>
+    <div class="gameArea">
+        <div class="player" id="player"></div>
+        <div class="obstacle" id="obs"></div>
+    </div>
+</div><!-- AI SECTION (40 KEYWORDS) --><div class="card">
+    <h2>🤖 Ask Any Keyword (Physics AI)</h2>
+    <input type="text" id="question" placeholder="motion, force, gravity, energy...">
+    <br>
+    <button class="btn" onclick="askAI()">Ask</button>
+    <div class="result" id="aiResult"></div>
+</div><!-- GLOSSARY --><div class="card">
+    <h2>📘 Physics Glossary</h2>
+    <p>Velocity = speed with direction</p>
+    <p>Acceleration = change in velocity</p>
+    <p>Momentum = mass × velocity</p>
+    <p>Force = mass × acceleration</p>
+</div><script>
+let isHindi=true;
+let score=0;
+let jumping=false;
+let carPos=0;
+let gameInterval;
+
+function toggleLang(){
+    isHindi=!isHindi;
+
+    document.getElementById("title").innerText=isHindi?"🚗 मोशन लैब अल्ट्रा":"🚗 Motion Lab ULTRA";
+    document.getElementById("homeBtn").innerText=isHindi?"🏠 होम":"🏠 Back to Home";
+
+    document.getElementById("t1").innerText=isHindi?"📌 Motion":"📌 Motion";
+    document.getElementById("p1").innerText=isHindi?"जब वस्तु स्थिति बदलती है":"When position changes";
+
+    document.getElementById("t2").innerText=isHindi?"⚡ गति के प्रकार":"⚡ Types of Motion";
+    document.getElementById("p2").innerText=isHindi?"सीधी, गोल, दोलन, यादृच्छिक":"Straight, circular, oscillatory, random";
+}
+
+function calculate(){
+    let d=document.getElementById("distance");
+    let t=document.getElementById("time");
+    let s=document.getElementById("speed");
+
+    if(!d.value&&t.value&&s.value)d.value=s.value*t.value;
+    else if(!t.value&&d.value&&s.value)t.value=d.value/s.value;
+    else if(!s.value&&d.value&&t.value)s.value=d.value/t.value;
+}
+
+function resetCalc(){
+    document.getElementById("distance").value="";
+    document.getElementById("time").value="";
+    document.getElementById("speed").value="";
+}
+
+function startCar(){
+    carPos=0;
+    let car=document.getElementById("car");
+    let move=setInterval(()=>{
+        carPos+=5;
+        car.style.left=carPos+"px";
+        if(carPos>300)clearInterval(move);
+    },40);
+}
+
+function resetCar(){
+    document.getElementById("car").style.left="0px";
+}
+
+function jump(){
+    if(jumping)return;
+    jumping=true;
+    let p=document.getElementById("player");
+    let pos=0;
+
+    let up=setInterval(()=>{
+        if(pos>=90){clearInterval(up);down();return;}
+        pos+=10;
+        p.style.bottom=pos+"px";
+    },20);
+
+    function down(){
+        let dn=setInterval(()=>{
+            if(pos<=0){clearInterval(dn);jumping=false;return;}
+            pos-=10;
+            p.style.bottom=pos+"px";
+        },20);
+    }
+}
+
+function startGame(){
+    let obs=document.getElementById("obs");
+    let pos=0;
+    gameInterval=setInterval(()=>{
+        pos+=5;
+        obs.style.right=pos+"px";
+        if(pos>300){pos=0;score++;document.getElementById("score").innerText="Score: "+score;}
+    },50);
+}
+
+function askAI(){
+    let q=document.getElementById("question").value.toLowerCase();
+
+    let map={
+        motion:"change in position",
+        speed:"distance/time",
+        velocity:"speed with direction",
+        force:"mass × acceleration",
+        gravity:"pull towards earth",
+        energy:"ability to do work",
+        work:"force × distance",
+        acceleration:"change in velocity",
+        mass:"amount of matter",
+        distance:"path length",
+        time:"duration",
+        friction:"opposes motion",
+        inertia:"resistance",
+        momentum:"mass × velocity",
+        wave:"energy transfer",
+        light:"travels straight",
+        sound:"needs medium",
+        pressure:"force/area",
+        heat:"energy transfer",
+        electricity:"flow of charge",
+        magnet:"attracts metals",
+        newton:"laws of motion"
+    };
+
+    let ans="❌ only physics keywords";
+
+    for(let k in map){
+        if(q.includes(k)) ans=map[k];
+    }
+
+    document.getElementById("aiResult").innerText=ans;
+}
+</script></body>
+</html>

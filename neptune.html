@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Neptune | Planet Information</title>
+
+<style>
+    body{
+        margin:0;
+        font-family: Arial, sans-serif;
+
+        /* ICE BLUE SPACE BACKGROUND */
+        background: radial-gradient(circle at top, #0b1c3a, #05060c 70%);
+        color:white;
+        text-align:center;
+        padding:25px;
+    }
+
+    /* stars */
+    body::before{
+        content:"";
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:
+        radial-gradient(2px 2px at 10% 20%, rgba(255,255,255,0.9), transparent),
+        radial-gradient(1px 1px at 70% 40%, rgba(255,255,255,0.7), transparent),
+        radial-gradient(2px 2px at 40% 80%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 85% 60%, rgba(255,255,255,0.8), transparent);
+        opacity:0.2;
+        z-index:-1;
+    }
+
+    .box{
+        max-width:600px;
+        margin:auto;
+
+        background: rgba(255,255,255,0.06);
+        border:1px solid rgba(255,255,255,0.12);
+        border-radius:30px;
+        padding:35px;
+
+        box-shadow:
+        0 0 40px rgba(0,150,255,0.15),
+        inset 0 0 25px rgba(255,255,255,0.05);
+
+        backdrop-filter: blur(12px);
+    }
+
+    img{
+        width:240px;
+        height:240px;
+        border-radius:50%;
+        margin-bottom:15px;
+
+        box-shadow:0 0 40px rgba(0,180,255,0.6);
+        transition:0.4s ease;
+    }
+
+    img:hover{
+        transform: scale(1.07);
+    }
+
+    h1{
+        font-size:40px;
+        margin:10px 0 5px;
+        color:#7fd3ff;
+        text-shadow:0 0 18px rgba(0,200,255,0.5);
+    }
+
+    h2{
+        font-size:20px;
+        color:#b7e6ff;
+        margin-bottom:20px;
+    }
+
+    .section-title{
+        margin-top:25px;
+        font-size:18px;
+        color:#ffffff;
+        text-shadow:0 0 10px rgba(0,200,255,0.3);
+    }
+
+    .desc{
+        text-align:left;
+        font-size:15px;
+        line-height:1.8;
+        color:#d6f3ff;
+    }
+
+    .highlight{
+        color:#7fd3ff;
+        font-weight:bold;
+    }
+
+    /* facts */
+    .fact-box{
+        margin-top:25px;
+        padding:22px;
+        background: rgba(255,255,255,0.05);
+        border:1px solid rgba(255,255,255,0.1);
+        border-radius:20px;
+        text-align:left;
+    }
+
+    .fact-box h3{
+        text-align:center;
+        color:#7fd3ff;
+        margin-bottom:15px;
+        text-shadow:0 0 10px rgba(0,200,255,0.4);
+    }
+
+    .fact-box p{
+        font-size:14px;
+        margin:8px 0;
+        line-height:1.6;
+        color:#d6f3ff;
+    }
+
+    .btn{
+        display:inline-block;
+        margin-top:22px;
+        padding:12px 18px;
+        text-decoration:none;
+
+        background:rgba(255,255,255,0.08);
+        color:white;
+        border-radius:14px;
+        border:1px solid rgba(255,255,255,0.2);
+
+        transition:0.3s ease;
+    }
+
+    .btn:hover{
+        background:#7fd3ff;
+        color:black;
+        transform: scale(1.06);
+        box-shadow:0 0 20px rgba(0,200,255,0.5);
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <img src="neptune.jpg" alt="Neptune">
+
+    <h1>🌊 Neptune</h1>
+    <h2>The Mysterious Ice Giant</h2>
+
+    <div class="section-title">📖 About Neptune</div>
+
+    <div class="desc">
+
+        Neptune is the eighth and farthest planet from the Sun. It is a cold and windy ice giant known for its deep blue color and extreme weather systems.
+
+        <br><br>
+
+        Its blue color comes from <span class="highlight">methane gas</span> in the atmosphere, which absorbs red light and reflects blue light, giving Neptune its stunning appearance.
+
+        <br><br>
+
+        Neptune has the fastest winds in the Solar System, reaching speeds of more than <span class="highlight">2000 km/h</span>, making it one of the most violent atmospheres known.
+
+        <br><br>
+
+        It is an extremely cold world because it is so far from the Sun, and it has faint rings and many moons including its largest moon, Triton.
+
+    </div>
+
+    <div class="section-title">🌌 10 Interesting Facts about Neptune</div>
+
+    <div class="fact-box">
+
+        <h3>Neptune Facts</h3>
+
+        <p>1. Neptune is the eighth planet from the Sun.</p>
+        <p>2. It is the farthest planet in the Solar System.</p>
+        <p>3. Neptune is an ice giant planet.</p>
+        <p>4. It appears deep blue due to methane gas.</p>
+        <p>5. Neptune has the fastest winds in the Solar System.</p>
+        <p>6. Wind speeds can exceed 2000 km/h.</p>
+        <p>7. It has faint rings around it.</p>
+        <p>8. Neptune has many moons.</p>
+        <p>9. Triton is its largest moon.</p>
+        <p>10. Neptune is extremely cold and far from the Sun.</p>
+
+    </div>
+
+    <a class="btn" href="index.html">⬅ Back to Solar System</a>
+
+</div>
+
+</body>
+</html>

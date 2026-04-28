@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset 
+xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- 🏠 HOME -->
+  <url>
+    <loc>https://planetsatyam.netlify.app/</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 🪐 PLANETS (with images) -->
+  <url>
+    <loc>https://planetsatyam.netlify.app/earth.html</loc>
+    <image:image>
+      <image:loc>https://planetsatyam.netlify.app/earth.jpg</image:loc>
+    </image:image>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://planetsatyam.netlify.app/mars.html</loc>
+    <image:image>
+      <image:loc>https://planetsatyam.netlify.app/mars.jpg</image:loc>
+    </image:image>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://planetsatyam.netlify.app/mercury.html</loc>
+    <image:image>
+      <image:loc>https://planetsatyam.netlify.app/mercury.jpg</image:loc>
+    </image:image>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://planetsatyam.netlify.app/venus.html</loc>
+    <image:image>
+      <image:loc>https://planetsatyam.netlify.app/venus.jpg</image:loc>
+    </image:image>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://planetsatyam.netlify.app/jupiter.html</loc>
+    <image:image>
+      <image:loc>https://planetsatyam.netlify.app/jupiter.jpg</image:loc>
+    </image:image>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://planetsatyam.netlify.app/saturn.html</loc>
+    <image:image>
+      <image:loc>https://planetsatyam.netlify.app/saturn.jpg</image:loc>
+    </image:image>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://planetsatyam.netlify.app/uranus.html</loc>
+    <image:image>
+      <image:loc>https://planetsatyam.netlify.app/uranus.jpg</image:loc>
+    </image:image>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://planetsatyam.netlify.app/neptune.html</loc>
+    <image:image>
+      <image:loc>https://planetsatyam.netlify.app/neptune.jpg</image:loc>
+    </image:image>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ⚡ PHYSICS (no image) -->
+  <url>
+    <loc>https://planetsatyam.netlify.app/motion.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://planetsatyam.netlify.app/laws.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://planetsatyam.netlify.app/electricity.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 🧪 CHEMISTRY -->
+  <url>
+    <loc>https://planetsatyam.netlify.app/acids.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://planetsatyam.netlify.app/bases.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://planetsatyam.netlify.app/salts.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 🤖 AI -->
+  <url>
+    <loc>https://planetsatyam.netlify.app/ai_intro.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>https://planetsatyam.netlify.app/machine_learning.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Earth | Planet Information</title>
+
+<style>
+    body{
+        margin:0;
+        font-family: "Arial", sans-serif;
+        background: radial-gradient(circle at top, #071a2e, #02040a);
+        color:white;
+        text-align:center;
+        padding:25px;
+    }
+
+    /* soft star effect */
+    body::before{
+        content:"";
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:
+        radial-gradient(2px 2px at 15% 20%, white, transparent),
+        radial-gradient(1px 1px at 80% 30%, white, transparent),
+        radial-gradient(1px 1px at 40% 70%, white, transparent),
+        radial-gradient(1px 1px at 60% 90%, white, transparent);
+        opacity:0.2;
+        z-index:-1;
+    }
+
+    .box{
+        max-width:520px;
+        margin:auto;
+        background: rgba(255,255,255,0.06);
+        border:1px solid rgba(255,255,255,0.12);
+        border-radius:25px;
+        padding:30px;
+        box-shadow:0 0 30px rgba(0,255,255,0.18);
+        backdrop-filter: blur(10px);
+    }
+
+    img{
+        width:230px;
+        height:230px;
+        border-radius:50%;
+        margin-bottom:15px;
+        box-shadow:0 0 30px lightblue;
+        transition:0.3s ease;
+    }
+
+    img:hover{
+        transform: scale(1.06);
+    }
+
+    h1{
+        color:lightblue;
+        text-shadow:0 0 15px lightblue;
+        margin-bottom:5px;
+        font-size:34px;
+    }
+
+    h2{
+        color:#7CFFB2;
+        margin-bottom:15px;
+        font-size:20px;
+    }
+
+    .desc{
+        text-align:left;
+        font-size:15px;
+        line-height:1.8;
+        color:#d8f3ff;
+        opacity:0.95;
+    }
+
+    .highlight{
+        color:#7CFFB2;
+        font-weight:bold;
+    }
+
+    .btn{
+        display:inline-block;
+        margin-top:20px;
+        padding:12px 18px;
+        text-decoration:none;
+        background:rgba(255,255,255,0.1);
+        color:white;
+        border-radius:12px;
+        border:1px solid rgba(255,255,255,0.2);
+        transition:0.3s ease;
+    }
+
+    .btn:hover{
+        background:lightblue;
+        color:black;
+        transform: scale(1.05);
+        box-shadow:0 0 15px lightblue;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <img src="earth.jpg" alt="Earth">
+
+    <h1>🌍 Earth</h1>
+    <h2>The Only Known Living Planet</h2>
+
+    <div class="desc">
+
+        Earth is the third planet from the Sun and the most unique planet in the entire Solar System because it is the only known world that supports life. It is often called the <span class="highlight">“Blue Planet”</span> due to the large amount of water covering its surface, which appears blue from space.
+
+        <br><br>
+
+        About <span class="highlight">71% of Earth’s surface</span> is covered with oceans, seas, and water bodies, while the remaining part consists of continents, mountains, deserts, and forests. This balance of land and water makes Earth perfectly suitable for life to exist.
+
+        <br><br>
+
+        Earth has a protective layer called the <span class="highlight">atmosphere</span>, which contains gases like oxygen and nitrogen. This atmosphere protects all living beings from harmful solar radiation and helps maintain a stable climate.
+
+        <br><br>
+
+        The planet also has a natural satellite called the <span class="highlight">Moon</span>. The Moon plays an important role in controlling ocean tides and also makes the night sky beautiful.
+
+        <br><br>
+
+        Earth completes one full rotation in <span class="highlight">24 hours</span>, which creates day and night, and takes <span class="highlight">365 days</span> to complete one revolution around the Sun, forming a year.
+
+        <br><br>
+
+        Life on Earth exists in many forms — humans, animals, birds, insects, plants, and microorganisms. Every organism plays an important role in maintaining the balance of nature.
+
+        <br><br>
+
+        In simple words, Earth is not just a planet, it is our <span class="highlight">home</span>, and protecting it is the responsibility of every living being.
+
+    </div>
+
+    <a class="btn" href="index.html">⬅ Back to Solar System</a>
+
+</div>
+
+</body>
+</html>

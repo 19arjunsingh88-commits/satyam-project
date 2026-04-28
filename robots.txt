@@ -1,0 +1,29 @@
+# 🌐 Allow all search engines
+User-agent: *
+Allow: /
+
+# 🚫 Block unwanted folders (future use)
+Disallow: /admin/
+Disallow: /login/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /backup/
+
+# 📁 Block file types (optional protection)
+Disallow: /*.txt$
+Disallow: /*.log$
+Disallow: /*.bak$
+
+# ⚡ Special rules for Googlebot
+User-agent: Googlebot
+Allow: /
+
+# 🖼️ Allow images for Google Images
+User-agent: Googlebot-Image
+Allow: /
+
+# 📊 Crawl delay for bots (optional)
+Crawl-delay: 5
+
+# 📍 Sitemap (VERY IMPORTANT)
+Sitemap: https://planetsatyam.netlify.app/sitemap.xml

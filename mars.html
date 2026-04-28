@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mars | Planet Information</title>
+
+<style>
+    body{
+        margin:0;
+        font-family: Arial, sans-serif;
+        background: radial-gradient(circle at top, #2b0b0b, #05010a);
+        color:white;
+        text-align:center;
+        padding:25px;
+    }
+
+    /* subtle stars */
+    body::before{
+        content:"";
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:
+        radial-gradient(2px 2px at 15% 25%, white, transparent),
+        radial-gradient(1px 1px at 70% 40%, white, transparent),
+        radial-gradient(2px 2px at 40% 75%, white, transparent),
+        radial-gradient(1px 1px at 85% 60%, white, transparent);
+        opacity:0.2;
+        z-index:-1;
+    }
+
+    .box{
+        max-width:580px;
+        margin:auto;
+        background: rgba(255,255,255,0.06);
+        border:1px solid rgba(255,255,255,0.12);
+        border-radius:25px;
+        padding:30px;
+        box-shadow:0 0 35px rgba(255,0,0,0.18);
+        backdrop-filter: blur(10px);
+    }
+
+    img{
+        width:230px;
+        height:230px;
+        border-radius:50%;
+        margin-bottom:15px;
+        box-shadow:0 0 30px red;
+        transition:0.3s ease;
+    }
+
+    img:hover{
+        transform: scale(1.06);
+    }
+
+    h1{
+        color:red;
+        text-shadow:0 0 15px red;
+        font-size:36px;
+        margin-bottom:5px;
+    }
+
+    h2{
+        color:orange;
+        font-size:20px;
+        margin-bottom:15px;
+    }
+
+    .section-title{
+        margin-top:25px;
+        font-size:18px;
+        color:#ffcc66;
+        text-shadow:0 0 8px orange;
+    }
+
+    .desc{
+        text-align:left;
+        font-size:15px;
+        line-height:1.8;
+        color:#d9f7ff;
+        opacity:0.95;
+    }
+
+    .highlight{
+        color:orange;
+        font-weight:bold;
+    }
+
+    /* facts box */
+    .fact-box{
+        margin-top:25px;
+        padding:20px;
+        background: rgba(255,255,255,0.05);
+        border:1px solid rgba(255,255,255,0.1);
+        border-radius:20px;
+        text-align:left;
+    }
+
+    .fact-box h3{
+        text-align:center;
+        color:orange;
+        text-shadow:0 0 10px red;
+        margin-bottom:15px;
+    }
+
+    .fact-box p{
+        font-size:14px;
+        line-height:1.6;
+        margin:10px 0;
+        color:#d9f7ff;
+    }
+
+    .btn{
+        display:inline-block;
+        margin-top:20px;
+        padding:12px 18px;
+        text-decoration:none;
+        background:rgba(255,255,255,0.1);
+        color:white;
+        border-radius:12px;
+        border:1px solid rgba(255,255,255,0.2);
+        transition:0.3s ease;
+    }
+
+    .btn:hover{
+        background:red;
+        color:white;
+        transform: scale(1.05);
+        box-shadow:0 0 15px red;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <img src="mars.jpg" alt="Mars">
+
+    <h1>🔴 Mars</h1>
+    <h2>The Red Planet of the Future</h2>
+
+    <div class="section-title">📖 About Mars</div>
+
+    <div class="desc">
+
+        Mars is the fourth planet from the Sun and is known as the <span class="highlight">Red Planet</span> because of iron-rich dust on its surface. It is a cold desert world with mountains, valleys, and ancient riverbeds.
+
+        <br><br>
+
+        Mars has the largest volcano in the Solar System called <span class="highlight">Olympus Mons</span>, which is nearly three times taller than Mount Everest. Scientists believe Mars once had rivers and lakes in the past.
+
+        <br><br>
+
+        Today, Mars is being explored by advanced robots like NASA’s <span class="highlight">Perseverance Rover</span> to study its surface and search for signs of ancient life.
+
+    </div>
+
+    <div class="section-title">🌌 10 Important Facts about Mars</div>
+
+    <div class="fact-box">
+
+        <h3>Mars Facts</h3>
+
+        <p>1. Mars is the fourth planet from the Sun.</p>
+        <p>2. It is called the Red Planet due to iron oxide.</p>
+        <p>3. Mars has the largest volcano in the Solar System.</p>
+        <p>4. Its volcano is called Olympus Mons.</p>
+        <p>5. Mars is a cold desert planet.</p>
+        <p>6. Evidence shows Mars had water in the past.</p>
+        <p>7. Mars has two moons: Phobos and Deimos.</p>
+        <p>8. A day on Mars is similar to Earth (24.6 hours).</p>
+        <p>9. NASA rover Perseverance is exploring Mars.</p>
+        <p>10. Mars is a major target for future human missions.</p>
+
+    </div>
+
+    <a class="btn" href="index.html">⬅ Back to Solar System</a>
+
+</div>
+
+</body>
+</html>

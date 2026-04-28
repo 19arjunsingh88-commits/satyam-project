@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newton Physics EPIC Lab</title>
+
+<style>
+:root{
+    --bg1:#020024;
+    --bg2:#090979;
+    --card:rgba(255,255,255,0.08);
+    --text:white;
+    --accent:#00e5ff;
+    --glow:#ffe066;
+}
+
+body{
+    margin:0;
+    font-family:Arial;
+    background:linear-gradient(135deg,var(--bg1),var(--bg2));
+    color:var(--text);
+    text-align:center;
+    padding:15px;
+}
+
+h1{
+    color:var(--glow);
+    text-shadow:0 0 12px var(--glow);
+}
+
+.card{
+    max-width:1000px;
+    margin:15px auto;
+    padding:18px;
+    background:var(--card);
+    border-radius:15px;
+    text-align:left;
+}
+
+.center{text-align:center;}
+
+.btn{
+    padding:10px 14px;
+    margin:6px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:var(--accent);
+    font-weight:bold;
+    color:black;
+}
+
+input,select{
+    padding:10px;
+    margin:6px;
+    border-radius:10px;
+    border:none;
+    width:180px;
+    text-align:center;
+    font-weight:bold;
+}
+
+h2,h3{color:#00e5ff;}
+
+p,li{line-height:1.7;}
+
+.section-title{
+    color:#ffe066;
+    margin-top:15px;
+}
+
+.result{
+    margin-top:10px;
+    font-size:18px;
+    color:#ffe066;
+}
+</style>
+</head>
+
+<body>
+
+<h1 id="title">🚀 Newton Physics EPIC LAB</h1>
+
+<div class="card center">
+    <button class="btn" onclick="toggle()">🌐 हिंदी / English</button>
+    <br> <br>
+    <a class="btn" href="index.html">🏠 Home</a>
+</div>
+
+<!-- ================= THEORY ================= -->
+<div class="card">
+
+<h2>📘 Newton’s Laws (Complete Theory)</h2>
+
+<h3>🧠 What is Motion?</h3>
+<p>
+Motion is the change in position of an object with respect to time.
+In simple words, when anything moves from one place to another, it is called motion.
+</p>
+
+<p>
+गति वह प्रक्रिया है जिसमें कोई वस्तु समय के साथ अपनी स्थिति बदलती है।
+</p>
+
+<h3 class="section-title">⚡ Types of Motion</h3>
+<ul>
+<li>Rectilinear Motion (सीधी रेखा में गति)</li>
+<li>Circular Motion (वृत्ताकार गति)</li>
+<li>Oscillatory Motion (दोलन गति)</li>
+<li>Random Motion (अनियमित गति)</li>
+</ul>
+
+<h3 class="section-title">📘 Newton’s First Law</h3>
+<p>
+An object remains in rest or uniform motion unless acted upon by an external force.
+</p>
+<p>
+कोई वस्तु तब तक स्थिर या समान गति में रहती है जब तक उस पर बाहरी बल न लगे।
+</p>
+
+<h3 class="section-title">📘 Newton’s Second Law</h3>
+<p>Force = Mass × Acceleration</p>
+<p>
+Force depends on mass and acceleration. More mass needs more force.
+</p>
+
+<h3 class="section-title">📘 Newton’s Third Law</h3>
+<p>
+For every action, there is an equal and opposite reaction.
+</p>
+<p>
+हर क्रिया की बराबर और विपरीत प्रतिक्रिया होती है।
+</p>
+
+<h3 class="section-title">⚡ Important Physics Terms</h3>
+<ul>
+<li>Force = Push or Pull</li>
+<li>Mass = Amount of matter</li>
+<li>Acceleration = Change in velocity</li>
+<li>Velocity = Speed with direction</li>
+<li>Friction = Opposes motion</li>
+<li>Gravity = Earth attraction force</li>
+<li>Momentum = mass × velocity</li>
+<li>Energy = ability to do work</li>
+</ul>
+
+<h3 class="section-title">🌍 Real Life Applications</h3>
+<p>
+🚗 Car movement<br>
+🚀 Rocket launch<br>
+🏀 Ball motion<br>
+🎢 Roller coaster<br>
+🛰 Satellite orbit
+</p>
+
+</div>
+
+<!-- ================= CALCULATOR ================= -->
+<div class="card center">
+
+<h2>📊 Multi Physics Calculator</h2>
+
+<select id="type" onchange="updateUI()">
+    <option value="force">Force (F = m × a)</option>
+    <option value="speed">Speed (v = d ÷ t)</option>
+    <option value="density">Density (ρ = m ÷ v)</option>
+    <option value="pressure">Pressure (P = F ÷ A)</option>
+</select>
+
+<div id="inputs"></div>
+
+<button class="btn" onclick="calculate()">Calculate</button>
+
+<div class="result" id="result"></div>
+
+</div>
+
+<script>
+
+let isHindi=false;
+
+/* LANGUAGE */
+function toggle(){
+    isHindi=!isHindi;
+}
+
+/* INPUT SYSTEM */
+function updateUI(){
+    let t=document.getElementById("type").value;
+    let box=document.getElementById("inputs");
+
+    if(t==="force"){
+        box.innerHTML=`
+        <input id="a" placeholder="Mass">
+        <input id="b" placeholder="Acceleration">
+        `;
+    }
+
+    if(t==="speed"){
+        box.innerHTML=`
+        <input id="a" placeholder="Distance">
+        <input id="b" placeholder="Time">
+        `;
+    }
+
+    if(t==="density"){
+        box.innerHTML=`
+        <input id="a" placeholder="Mass">
+        <input id="b" placeholder="Volume">
+        `;
+    }
+
+    if(t==="pressure"){
+        box.innerHTML=`
+        <input id="a" placeholder="Force">
+        <input id="b" placeholder="Area">
+        `;
+    }
+}
+updateUI();
+
+/* CALCULATION */
+function calculate(){
+    let t=document.getElementById("type").value;
+    let a=Number(document.getElementById("a").value);
+    let b=Number(document.getElementById("b").value);
+
+    let r=0;
+
+    if(t==="force") r=a*b;
+    if(t==="speed") r=a/b;
+    if(t==="density") r=a/b;
+    if(t==="pressure") r=a/b;
+
+    document.getElementById("result").innerText =
+    "Result = " + r;
+}
+
+</script>
+
+</body>
+</html>

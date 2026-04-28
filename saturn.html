@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Saturn | Planet Information</title>
+
+<style>
+    body{
+        margin:0;
+        font-family: Arial, sans-serif;
+
+        /* GOLDEN SPACE THEME */
+        background: radial-gradient(circle at top, #2a1d05, #05060c 70%);
+        color:white;
+        text-align:center;
+        padding:25px;
+    }
+
+    /* stars */
+    body::before{
+        content:"";
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:
+        radial-gradient(2px 2px at 10% 20%, rgba(255,255,255,0.9), transparent),
+        radial-gradient(1px 1px at 70% 40%, rgba(255,255,255,0.7), transparent),
+        radial-gradient(2px 2px at 40% 80%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 85% 60%, rgba(255,255,255,0.8), transparent);
+        opacity:0.2;
+        z-index:-1;
+    }
+
+    .box{
+        max-width:600px;
+        margin:auto;
+
+        background: rgba(255,255,255,0.06);
+        border:1px solid rgba(255,255,255,0.12);
+        border-radius:30px;
+        padding:35px;
+
+        box-shadow:
+        0 0 40px rgba(255,215,0,0.15),
+        inset 0 0 25px rgba(255,255,255,0.05);
+
+        backdrop-filter: blur(12px);
+    }
+
+    img{
+        width:240px;
+        height:240px;
+        border-radius:50%;
+        margin-bottom:15px;
+
+        box-shadow:0 0 40px rgba(255,215,0,0.6);
+        transition:0.4s ease;
+    }
+
+    img:hover{
+        transform: scale(1.07);
+    }
+
+    h1{
+        font-size:40px;
+        margin:10px 0 5px;
+        color:#ffd700;
+        text-shadow:0 0 18px rgba(255,215,0,0.5);
+    }
+
+    h2{
+        font-size:20px;
+        color:#ffcc80;
+        margin-bottom:20px;
+    }
+
+    .section-title{
+        margin-top:25px;
+        font-size:18px;
+        color:#ffffff;
+        text-shadow:0 0 10px rgba(255,215,0,0.3);
+    }
+
+    .desc{
+        text-align:left;
+        font-size:15px;
+        line-height:1.8;
+        color:#fff5e6;
+    }
+
+    .highlight{
+        color:#ffd700;
+        font-weight:bold;
+    }
+
+    /* facts */
+    .fact-box{
+        margin-top:25px;
+        padding:22px;
+        background: rgba(255,255,255,0.05);
+        border:1px solid rgba(255,255,255,0.1);
+        border-radius:20px;
+        text-align:left;
+    }
+
+    .fact-box h3{
+        text-align:center;
+        color:#ffd700;
+        margin-bottom:15px;
+        text-shadow:0 0 12px rgba(255,215,0,0.4);
+    }
+
+    .fact-box p{
+        font-size:14px;
+        margin:8px 0;
+        line-height:1.6;
+        color:#fff5e6;
+    }
+
+    .btn{
+        display:inline-block;
+        margin-top:22px;
+        padding:12px 18px;
+        text-decoration:none;
+
+        background:rgba(255,255,255,0.08);
+        color:white;
+        border-radius:14px;
+        border:1px solid rgba(255,255,255,0.2);
+
+        transition:0.3s ease;
+    }
+
+    .btn:hover{
+        background:#ffd700;
+        color:black;
+        transform: scale(1.06);
+        box-shadow:0 0 20px rgba(255,215,0,0.5);
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <img src="saturn.jpg" alt="Saturn">
+
+    <h1>🪐 Saturn</h1>
+    <h2>The Jewel of the Solar System</h2>
+
+    <div class="section-title">📖 About Saturn</div>
+
+    <div class="desc">
+
+        Saturn is the second largest planet in the Solar System and is famous for its stunning ring system, making it one of the most beautiful planets ever observed.
+
+        <br><br>
+
+        It is a gas giant made mostly of hydrogen and helium, and it is the sixth planet from the Sun.
+
+        <br><br>
+
+        Its rings are made of ice, rock, and dust particles, forming one of the most spectacular structures in space.
+
+        <br><br>
+
+        Saturn also has more than <span class="highlight">80 moons</span>, including Titan, which has a thick atmosphere and lakes of liquid methane.
+
+    </div>
+
+    <div class="section-title">🌌 10 Interesting Facts about Saturn</div>
+
+    <div class="fact-box">
+
+        <h3>Saturn Facts</h3>
+
+        <p>1. Saturn is the second largest planet.</p>
+        <p>2. It is famous for its beautiful rings.</p>
+        <p>3. Saturn is a gas giant.</p>
+        <p>4. Its rings are made of ice and dust.</p>
+        <p>5. Saturn has more than 80 moons.</p>
+        <p>6. Titan is its largest moon.</p>
+        <p>7. Saturn is very light in density.</p>
+        <p>8. It could float in water (theoretically).</p>
+        <p>9. Saturn has strong winds and storms.</p>
+        <p>10. It is one of the most beautiful planets in space.</p>
+
+    </div>
+
+    <a class="btn" href="index.html">⬅ Back to Solar System</a>
+
+</div>
+
+</body>
+</html>

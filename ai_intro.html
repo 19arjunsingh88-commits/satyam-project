@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Introduction - Space Explorer</title>
+
+<style>
+:root{
+    --bg1:#05061a;
+    --bg2:#01010a;
+    --card:rgba(255,255,255,0.06);
+    --text:#fff;
+    --accent:#00e5ff;
+    --glow:#ffe066;
+}
+
+body{
+    margin:0;
+    font-family:Arial;
+    background:radial-gradient(circle at top,var(--bg1),var(--bg2));
+    color:var(--text);
+    text-align:center;
+    padding:15px;
+}
+
+h1{
+    color:var(--glow);
+    text-shadow:0 0 10px var(--glow);
+}
+
+.card{
+    max-width:900px;
+    margin:15px auto;
+    padding:18px;
+    background:var(--card);
+    border-radius:15px;
+    text-align:left;
+    backdrop-filter:blur(8px);
+}
+
+.center{text-align:center;}
+
+.btn{
+    padding:10px 14px;
+    margin:6px;
+    border:none;
+    border-radius:10px;
+    background:var(--accent);
+    font-weight:bold;
+    cursor:pointer;
+    color:black;
+}
+
+h2,h3{
+    color:var(--accent);
+}
+
+p,li{
+    line-height:1.6;
+}
+
+ul{
+    padding-left:20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🤖 AI Introduction</h1>
+
+<div class="card center">
+    <button class="btn" onclick="toggleLang()">🌐 हिंदी / English</button>
+    <br><br>
+    <a class="btn" href="index.html">🏠 Home</a>
+</div>
+
+<!-- THEORY -->
+<div class="card">
+
+    <h2 data-en="🧠 What is AI?" data-hi="🧠 AI क्या है?">
+        🧠 What is AI?
+    </h2>
+
+    <p data-en="Artificial Intelligence (AI) is a technology that allows machines to think and learn like humans."
+       data-hi="आर्टिफिशियल इंटेलिजेंस (AI) एक तकनीक है जिससे मशीनें इंसानों की तरह सोच और सीख सकती हैं।">
+       Artificial Intelligence (AI) is a technology that allows machines to think and learn like humans.
+    </p>
+
+</div>
+
+<!-- TYPES -->
+<div class="card">
+
+    <h2 data-en="⚡ Types of AI" data-hi="⚡ AI के प्रकार">⚡ Types of AI</h2>
+
+    <ul>
+        <li data-en="Narrow AI (Single task AI)" data-hi="Narrow AI (एक काम करने वाली AI)">Narrow AI</li>
+        <li data-en="General AI (Human-like intelligence)" data-hi="General AI (मानव जैसी बुद्धिमत्ता)">General AI</li>
+        <li data-en="Super AI (Future AI)" data-hi="Super AI (भविष्य की AI)">Super AI</li>
+    </ul>
+
+</div>
+
+<!-- USES -->
+<div class="card">
+
+    <h2 data-en="🌍 Uses of AI" data-hi="🌍 AI के उपयोग">🌍 Uses of AI</h2>
+
+    <ul>
+        <li>📱 Mobile assistants (Google Assistant, Siri)</li>
+        <li>🚗 Self-driving cars</li>
+        <li>🎮 Gaming AI</li>
+        <li>🏥 Medical diagnosis</li>
+        <li>📊 Data prediction</li>
+    </ul>
+
+</div>
+
+<!-- REAL LIFE EXAMPLE -->
+<div class="card">
+
+    <h2 data-en="🚀 Real Life Example" data-hi="🚀 वास्तविक उदाहरण">🚀 Real Life Example</h2>
+
+    <p data-en="When YouTube recommends videos, that is AI working."
+       data-hi="जब YouTube तुम्हें वीडियो सुझाता है, तो वह AI काम कर रही होती है।">
+       When YouTube recommends videos, that is AI working.
+    </p>
+
+</div>
+
+<script>
+
+let isHindi=false;
+
+function toggleLang(){
+
+    isHindi=!isHindi;
+
+    document.querySelectorAll("[data-en]").forEach(el=>{
+        el.innerText = isHindi ? el.dataset.hi : el.dataset.en;
+    });
+
+}
+
+</script>
+
+</body>
+</html>

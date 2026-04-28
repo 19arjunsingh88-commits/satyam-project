@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mercury | Planet Info</title>
+
+<style>
+    body{
+        margin:0;
+        font-family: Arial, sans-serif;
+
+        /* NEW PREMIUM SPACE BACKGROUND */
+        background: radial-gradient(circle at top, #1a2550, #05060c 70%);
+        color:white;
+        text-align:center;
+        padding:25px;
+    }
+
+    /* floating stars */
+    body::before{
+        content:"";
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:
+        radial-gradient(2px 2px at 15% 20%, rgba(255,255,255,0.9), transparent),
+        radial-gradient(1px 1px at 70% 40%, rgba(255,255,255,0.7), transparent),
+        radial-gradient(2px 2px at 40% 80%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 85% 60%, rgba(255,255,255,0.8), transparent);
+        opacity:0.25;
+        z-index:-1;
+    }
+
+    /* MAIN CARD */
+    .box{
+        max-width:600px;
+        margin:auto;
+        background: rgba(255,255,255,0.06);
+        border:1px solid rgba(255,255,255,0.12);
+        border-radius:30px;
+        padding:35px;
+
+        box-shadow:
+        0 0 40px rgba(180,180,180,0.15),
+        inset 0 0 25px rgba(255,255,255,0.05);
+
+        backdrop-filter: blur(12px);
+    }
+
+    /* PLANET IMAGE */
+    img{
+        width:240px;
+        height:240px;
+        border-radius:50%;
+        margin-bottom:15px;
+
+        box-shadow:0 0 40px rgba(200,200,200,0.4);
+        transition:0.4s ease;
+    }
+
+    img:hover{
+        transform: scale(1.07);
+    }
+
+    /* TITLES */
+    h1{
+        font-size:40px;
+        margin:10px 0 5px;
+        color:#e6e6e6;
+        text-shadow:0 0 18px rgba(255,255,255,0.25);
+    }
+
+    h2{
+        font-size:20px;
+        color:#bfc7d5;
+        margin-bottom:20px;
+    }
+
+    .section-title{
+        margin-top:25px;
+        font-size:18px;
+        color:#ffffff;
+        text-shadow:0 0 10px rgba(255,255,255,0.2);
+    }
+
+    /* DESCRIPTION */
+    .desc{
+        text-align:left;
+        font-size:15px;
+        line-height:1.8;
+        color:#d6f3ff;
+    }
+
+    .highlight{
+        color:#ffffff;
+        font-weight:bold;
+    }
+
+    /* FACT BOX */
+    .fact-box{
+        margin-top:25px;
+        padding:22px;
+        background: rgba(255,255,255,0.05);
+        border:1px solid rgba(255,255,255,0.1);
+        border-radius:20px;
+        text-align:left;
+    }
+
+    .fact-box h3{
+        text-align:center;
+        color:#ffffff;
+        margin-bottom:15px;
+        text-shadow:0 0 12px rgba(255,255,255,0.25);
+    }
+
+    .fact-box p{
+        font-size:14px;
+        margin:8px 0;
+        color:#d6f3ff;
+        line-height:1.6;
+    }
+
+    /* BUTTON */
+    .btn{
+        display:inline-block;
+        margin-top:22px;
+        padding:12px 18px;
+        text-decoration:none;
+
+        background:rgba(255,255,255,0.08);
+        color:white;
+        border-radius:14px;
+        border:1px solid rgba(255,255,255,0.2);
+
+        transition:0.3s ease;
+    }
+
+    .btn:hover{
+        background:white;
+        color:black;
+        transform: scale(1.06);
+        box-shadow:0 0 20px rgba(255,255,255,0.4);
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <img src="mercury.jpg" alt="Mercury">
+
+    <h1>🪐 Mercury</h1>
+    <h2>The Fastest and Smallest Planet</h2>
+
+    <div class="section-title">📖 About Mercury</div>
+
+    <div class="desc">
+
+        Mercury is the closest planet to the Sun and the smallest planet in our Solar System. It is a rocky world covered with thousands of craters, making it look similar to the Moon.
+
+        <br><br>
+
+        Because it is so close to the Sun, Mercury experiences extreme conditions — extremely hot during the day and freezing cold at night due to almost no atmosphere.
+
+        <br><br>
+
+        One full revolution around the Sun takes only <span class="highlight">88 Earth days</span>, making Mercury the fastest planet in the Solar System.
+
+        <br><br>
+
+        Even though it is closest to the Sun, Mercury is not the hottest planet — Venus is hotter due to its thick atmosphere.
+
+    </div>
+
+    <div class="section-title">🌌 10 Interesting Facts about Mercury</div>
+
+    <div class="fact-box">
+
+        <h3>Mercury Facts</h3>
+
+        <p>1. Mercury is the smallest planet in the Solar System.</p>
+        <p>2. It is the closest planet to the Sun.</p>
+        <p>3. Mercury has no atmosphere to trap heat.</p>
+        <p>4. It has extreme temperature differences.</p>
+        <p>5. A year on Mercury is only 88 Earth days.</p>
+        <p>6. Its surface is full of craters.</p>
+        <p>7. Mercury has no moons or rings.</p>
+        <p>8. It rotates very slowly on its axis.</p>
+        <p>9. Mercury is visible near sunrise or sunset.</p>
+        <p>10. It is not the hottest planet in the Solar System.</p>
+
+    </div>
+
+    <a class="btn" href="index.html">⬅ Back to Solar System</a>
+
+</div>
+
+</body>
+</html>
